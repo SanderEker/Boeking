@@ -1,0 +1,35 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Testpagina output 2 spring</title>
+</head>
+<body>
+	<h1>Uitvoer:</h1>
+	<table>
+		<thead>
+			<th>ID</th>
+			<th>Arrival</th>
+			<th>Departure</th>
+			<th>Highscore</th>
+		</thead>
+	<tbody>
+		<tr th:each="boeking : ${pietjes}">
+			<td th:text="${boeking.id}"></td>
+			<td th:text="${boeking.arrival}"></td>
+			<td th:text="${boeking.departure}"></td>
+			<td th:text="${boeking.highscore}"></td>
+		</tr>
+	</tbody>
+	</table>
+	
+	
+	<!-- <form th:object="${boeking}"   th:action="displaySporters" method="get">
+	
+	
+	
+	</form> -->
+
+</body>
+
+
+</html>

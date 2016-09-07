@@ -1,0 +1,37 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Reservering</title>
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+</head>
+<body>
+<h1>Voer reservering in</h1>
+
+<form th:object="${boeking}" th:action="saveBoeking" method="post">
+<input type="text" id="datepicker" th:field="*{arrival}" placeholder="arrival"/>
+<input type="text" id="datepicker" th:field="*{departure}" placeholder="departure"/>
+<input type="number" th:field="*{highscore}" placeholder="high score"/>
+<input type="submit" value="Submit"/>
+</form>
+
+
+
+<form th:object="${boeking}" th:action="displaySporters" method="get">
+<input type="submit" value="Show All"/>
+</form>
+
+<form th:object="${boeking}" th:action="orderbijhoogscore" method="get">
+<input type="submit" value="Ordered by Score"/>
+</form>
+
+
+</body>
+
+
+</html>
